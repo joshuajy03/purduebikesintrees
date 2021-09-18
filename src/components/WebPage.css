@@ -8,7 +8,7 @@
 .postcontainer {
     background-color: #d0ba92;
     border-radius: 10px;
-    min-width: 45vw;
+    min-width: 300px !important;
     max-width: 45vw;
     margin: auto;
 

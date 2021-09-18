@@ -5,7 +5,7 @@ import { Toolbar, Typography, AppBar, IconButton, Drawer, ClickAwayListener } fr
 import { Link, withRouter } from "react-router-dom";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import './NavBar.css';
-import logo from '../logo.svg';
+import logo from '../purdue.png';
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
@@ -23,7 +23,7 @@ const styles = makeStyles((theme) => ({
     }),
   },
   menuButton: {
-    color: "#FAC9B8",
+    color: "#000000",
   },
   hide: {
     display: 'none',
@@ -31,16 +31,16 @@ const styles = makeStyles((theme) => ({
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
-    background: '#22223B'
+    background: '#d0ba92'
   },
   drawerPaper: {
     width: drawerWidth,
-    backgroundColor: '#22223B',
+    backgroundColor: '#d0ba92',
   },
   drawerHeader: {
     display: 'flex',
     alignItems: 'center',
-    backgroundColor: '#22223B',
+    backgroundColor: '#d0ba92',
     padding: theme.spacing(0, 1),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
@@ -50,7 +50,7 @@ const styles = makeStyles((theme) => ({
 
   bar: {
     paddingTop: "0rem",
-    backgroundColor: "#22223B",
+    backgroundColor: "#d0ba92",
     ["@media (max-width: 900px)"]: {
       paddingLeft: 10,
     },
@@ -64,7 +64,7 @@ const styles = makeStyles((theme) => ({
   },
   menuItem: {
     cursor: "pointer",
-    backgroundColor: "#22223B",
+    backgroundColor: "#d0ba92",
     textAlign: "left",
     paddingLeft: "16px",
     marginBottom: 16,
@@ -99,11 +99,11 @@ function NavBarMobile() {
     <React.Fragment>
       <AppBar position="sticky">
         <Toolbar color="rgba(75, 59, 71, 0.87)" className={classes.bar}>
-          <Link style={{ textDecoration: 'none' }, {color : "#FAC9B8"}} to="/">
+          <Link style={{ textDecoration: 'none' }, {color : "#000000"}} to="/">
             <img src={logo} className={classes.logo} />
           </Link>
           <Typography variant="h6" noWrap className={classes.title}>
-            <h3>Purdue Bikes In Trees</h3>
+            <h3>Bikes In Trees</h3>
           </Typography>
           <ClickAwayListener onClickAway={handleDrawerClose} touchEvent={false} >
             <IconButton
@@ -129,32 +129,27 @@ function NavBarMobile() {
       >
         <div className={classes.drawerHeader}>
           <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'rtl' ? <ChevronLeftIcon style={{ color: "#FAC9B8"}} /> : <ChevronRightIcon style={{ color: "#FAC9B8" }} />}
+            {theme.direction === 'rtl' ? <ChevronLeftIcon style={{ color: "#000000"}} /> : <ChevronRightIcon style={{ color: "#000000" }} />}
           </IconButton>
         </div>
           <Typography variant="h6" className={classes.menuItem}>
-            <Link style={{ textDecoration: 'none' }, {color : "#FAC9B8"}} to="/">
+            <Link style={{ textDecoration: 'none' }, {color : "#000000"}} to="/">
               Home
             </Link>
           </Typography>
           <Typography variant="h6" className={classes.menuItem}>
-            <Link style={{ textDecoration: 'none' }, {color : "#FAC9B8"}} to="/awards">
-              Awards
+            <Link style={{ textDecoration: 'none' }, {color : "#000000"}} to="/post">
+              Post
             </Link>
           </Typography>
           <Typography variant="h6" className={classes.menuItem}>
-            <Link style={{ textDecoration: 'none' }, {color : "#FAC9B8"}} to="/courses">
-              Courses and Gallery
+            <Link style={{ textDecoration: 'none' }, {color : "#000000"}} to="/map">
+              Map
             </Link>
           </Typography>
           <Typography variant="h6" className={classes.menuItem}>
-            <Link style={{ textDecoration: 'none' }, {color : "#FAC9B8"}} to="/registration">
-              Registration Form
-            </Link>
-          </Typography>
-          <Typography variant="h6" className={classes.menuItem}>
-            <Link style={{ textDecoration: 'none' }, {color : "#FAC9B8"}} to="/contact">
-              Contact and PayPal
+            <Link style={{ textDecoration: 'none' }, {color : "#000000"}} to="/about">
+              About
             </Link>
           </Typography>
       </Drawer>

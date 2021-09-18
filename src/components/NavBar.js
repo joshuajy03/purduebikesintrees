@@ -11,7 +11,7 @@ const styles = makeStyles({
         backgroundColor: "#d0ba92",
     },
     logo: {
-        width: "100px",
+        width: "75px",
     },
     menuItem: {
         cursor: "pointer",
