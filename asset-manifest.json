@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/purduebikesintrees/static/css/main.a617e044.chunk.css",
+    "main.js": "/purduebikesintrees/static/js/main.214766ba.chunk.js",
+    "main.js.map": "/purduebikesintrees/static/js/main.214766ba.chunk.js.map",
+    "runtime-main.js": "/purduebikesintrees/static/js/runtime-main.e8512c64.js",
+    "runtime-main.js.map": "/purduebikesintrees/static/js/runtime-main.e8512c64.js.map",
+    "static/js/2.0b61dc29.chunk.js": "/purduebikesintrees/static/js/2.0b61dc29.chunk.js",
+    "static/js/2.0b61dc29.chunk.js.map": "/purduebikesintrees/static/js/2.0b61dc29.chunk.js.map",
+    "static/js/3.bf5df139.chunk.js": "/purduebikesintrees/static/js/3.bf5df139.chunk.js",
+    "static/js/3.bf5df139.chunk.js.map": "/purduebikesintrees/static/js/3.bf5df139.chunk.js.map",
+    "index.html": "/purduebikesintrees/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/purduebikesintrees/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.0b61dc29.chunk.js.LICENSE.txt": "/purduebikesintrees/static/js/2.0b61dc29.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/purduebikesintrees/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e8512c64.js",
+    "static/js/2.0b61dc29.chunk.js",
+    "static/css/main.a617e044.chunk.css",
+    "static/js/main.214766ba.chunk.js"
+  ]
+}
