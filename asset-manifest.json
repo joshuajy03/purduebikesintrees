@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/purduebikesintrees/static/css/main.dfe696b0.chunk.css",
+    "main.css": "/purduebikesintrees/static/css/main.00e192f4.chunk.css",
     "main.js": "/purduebikesintrees/static/js/main.a67432b0.chunk.js",
     "main.js.map": "/purduebikesintrees/static/js/main.a67432b0.chunk.js.map",
     "runtime-main.js": "/purduebikesintrees/static/js/runtime-main.ff30f1ce.js",
@@ -12,7 +12,7 @@
     "static/js/3.6f43140e.chunk.js.map": "/purduebikesintrees/static/js/3.6f43140e.chunk.js.map",
     "index.html": "/purduebikesintrees/index.html",
     "static/css/2.f2512455.chunk.css.map": "/purduebikesintrees/static/css/2.f2512455.chunk.css.map",
-    "static/css/main.dfe696b0.chunk.css.map": "/purduebikesintrees/static/css/main.dfe696b0.chunk.css.map",
+    "static/css/main.00e192f4.chunk.css.map": "/purduebikesintrees/static/css/main.00e192f4.chunk.css.map",
     "static/js/2.b2652087.chunk.js.LICENSE.txt": "/purduebikesintrees/static/js/2.b2652087.chunk.js.LICENSE.txt",
     "static/media/lightbluebike.aac5bd11.jpg": "/purduebikesintrees/static/media/lightbluebike.aac5bd11.jpg",
     "static/media/purdue.1c8520e0.png": "/purduebikesintrees/static/media/purdue.1c8520e0.png",
@@ -24,7 +24,7 @@
     "static/js/runtime-main.ff30f1ce.js",
     "static/css/2.f2512455.chunk.css",
     "static/js/2.b2652087.chunk.js",
-    "static/css/main.dfe696b0.chunk.css",
+    "static/css/main.00e192f4.chunk.css",
     "static/js/main.a67432b0.chunk.js"
   ]
 }
