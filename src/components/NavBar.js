@@ -23,7 +23,8 @@ const styles = makeStyles({
 
     space: {
         flexGrow: 1,
-        color: "#000000"
+        color: "#000000",
+        justifyContent: 'center',
     },
 })
 

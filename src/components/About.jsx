@@ -29,6 +29,8 @@ function About() {
                         Developer: Joshua Yang <br />
                         Picture Credits: Ethan Buck <br />
                     </p>
+                    <h3> GitHub </h3>
+                    <a href="https://github.com/joshuajy03/purduebikesintrees" >Github Repository Link</a>
                 </div>
             </div>
         </div>

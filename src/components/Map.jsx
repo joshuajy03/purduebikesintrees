@@ -4,7 +4,7 @@ import UploadImages from "./image-upload.component.js";
 
 
 
-function Home() {
+function Map() {
     var mapMinHeight = window.innerHeight * 0.8;
   return (
     <div className="home">
@@ -27,4 +27,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Map;
