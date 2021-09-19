@@ -12,9 +12,41 @@ function Post() {
     const upload = () => {
         if (image == null)
             return;
-        storage.ref(`/images/${image.name}`).put(image)
-            .on("state_changed", alert("image uploaded"), alert);
-        
+
+        var newMetadata = {
+            customMetadata: {
+                'location': location,
+                'description': description
+            }
+        };
+
+        // Delete the metadata property
+
+        const promises = [];
+        const uploadTask = storage.ref(`/images/${image.name}`).put(image);
+        promises.push(uploadTask);
+        uploadTask.on('state_changed', snapshot => {
+            const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            console.log(progress);
+        }, error => { console.log(error) }, () => {
+            uploadTask.snapshot.ref.getDownloadURL().then(downloadURL => {
+                console.log(downloadURL);
+            });
+        });
+
+        Promise.all(promises).then(tasks => {
+            alert("upload complete");
+            var storageRef = storage.ref();
+            var imageRef = storageRef.child(`images/${image.name}`);
+
+            imageRef.updateMetadata(newMetadata)
+                .then((metadata) => {
+                    // metadata.contentType should be null
+                }).catch((error) => {
+                    // Uh-oh, an error occurred!
+                    alert(error)
+                });
+        });
     }
 
 
@@ -25,12 +57,12 @@ function Post() {
                     <form onSubmit={upload}>
                         <h4>
                             Description: &nbsp;
-                            <input type="text" onChange={(e) => { setDescription(e.target.value)} }/>
+                            <input type="text" onChange={(e) => { setDescription(e.target.value) }} />
                         </h4>
                         &nbsp;
                         <h4>
                             Location: &nbsp;
-                            <input type="text" onChange={(e) => { setLocation(e.target.value)} }/>
+                            <input type="text" onChange={(e) => { setLocation(e.target.value) }} />
                         </h4>
                         <div className="content">
                             <h4>Upload Your Image</h4>
