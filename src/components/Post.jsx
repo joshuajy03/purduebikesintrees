@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import './WebPage.css';
-import UploadImages from "./image-upload.component.js";
 import storage from '../firebase/firebase';
 
 
@@ -35,7 +34,7 @@ function Post() {
         });
 
         Promise.all(promises).then(tasks => {
-            alert("upload complete");
+            alert("upload");
             var storageRef = storage.ref();
             var imageRef = storageRef.child(`images/${image.name}`);
 

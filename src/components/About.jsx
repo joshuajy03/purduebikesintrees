@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import './WebPage.css';
-import UploadImages from "./image-upload.component.js";
 
 
 function About() {

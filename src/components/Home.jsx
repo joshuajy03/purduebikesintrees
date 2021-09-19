@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import './WebPage.css';
-import UploadImages from "./image-upload.component.js";
 import whitebike from "../whitebike.jpg";
 import turquoisebike from "../turquoisebike.jpg";
 import lightbluebike from "../lightbluebike.jpg";
