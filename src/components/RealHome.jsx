@@ -16,6 +16,9 @@ function RealHome() {
 
     const [data, setData] = useState([]);
     const [url, setUrl] = useState([]);
+    const [des, setDes] = useState([]);
+    const [loc, setLoc] = useState([]);
+    const [date, setDate] = useState([]);
 
 
     function listItem() {
@@ -24,6 +27,13 @@ function RealHome() {
                 res.items.forEach((item) => {
                     item.getDownloadURL().then((e) => {
                         setUrl(arr => [...arr, e]);
+                        
+                    })
+                    item.getMetadata().then((f) => {
+                        setDes(arr => [...arr, f.customMetadata.description]);
+                        console.log(f);
+                        setLoc(arr => [...arr, f.customMetadata.location]);
+                        setDate(arr => [...arr, f.customMetadata.date]);
                     })
 
                 })
@@ -40,19 +50,15 @@ function RealHome() {
 
     return (
         <div className="home">
-            <div class="postcontainer pt-3 pb-3 my-3">
-                <div class="row align-items-center">
-                    <h4>Turquoise Bike [McCutcheon Hall] [09/18/2021]</h4>
-                    <img src={turquoisebike} class="postimage" />
-                </div>
-            </div>
-
             {
-                url.map((val) => (
+                url.map((val, index) => (
                     <div class="postcontainer pt-3 pb-3 my-3">
                         <div class="row align-items-center">
-                            <img key={{ val }} src={{ val }} class="postimage" />
-                            <h2>{val}</h2>
+                            {  
+                                <h4>{des[index]} [{loc[index]}] [{date[index]}]</h4>
+                            }
+                            <img alt={val} src={val} onLoad={console.log(val)} class="postimage" />
+                            
                         </div>
                     </div>
 

@@ -8,14 +8,24 @@ function Post() {
     const [location, setLocation] = useState('');
     const [description, setDescription] = useState('');
 
+
+
     const upload = () => {
         if (image == null)
             return;
 
+        let myCurrentDate = new Date();
+        let day = myCurrentDate.getDate();
+        let month = myCurrentDate.getMonth() + 1;
+        let year = myCurrentDate.getFullYear();
+
+        const date = month + "/" + day + "/" + year;
+
         var newMetadata = {
             customMetadata: {
                 'location': location,
-                'description': description
+                'description': description,
+                'date': date
             }
         };
 

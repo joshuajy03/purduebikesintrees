@@ -80,7 +80,7 @@ function App() {
         <HashRouter basename="/">
           {mobileView ? displayMobile() : displayDesktop()}
           <Switch>
-            <Route path="/" exact component={() => <Home />} />
+            <Route path="/" exact component={() => <RealHome />} />
             <Route path="/post" exact component={() => <Post />} />
             <Route path="/map" exact component={() => <Map />} />
             <Route path="/about" exact component={() => <About />} />
