@@ -7,7 +7,7 @@ import { HashRouter} from "react-router-dom";
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import './App.css';
 import React, { useState, useEffect } from 'react';
-import { Home, Post, Map, About } from "./components";
+import { Home, Post, Map, About, RealHome } from "./components";
 
 
 const displayDesktop = () => {

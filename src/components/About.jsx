@@ -14,6 +14,7 @@ function About() {
                         The purpose of the website is to allow Purdue students and faculty to post picture of the bikes in trees on campus.
                         Additionally, it helps people who have lost their bike locate their bike if it is found in a tree.
                         Posts are completely anonymous to protect the privacy of posters.<br />
+                        The website is made with ReactJS and uses Firebase.
                     </p>
                     <h3> Future Features </h3>
                     <p>
