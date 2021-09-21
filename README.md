@@ -1,7 +1,7 @@
-# purduebikesintreesf
+# Purdue Bikes In Trees (PBIT)
 
 ## Inspiration
-Walking around campus, especially during BGR, there was a spectacle of bikes in trees. This was completely new to me as I had never seen a bike in a tree before coming to campus.
+Walking around Purdue's campus, especially during BGR, there was a spectacle of bikes in trees. This was completely new to me as I had never seen a bike in a tree before coming to campus.
  
 ## What it does
 This project is a website that allows you to upload images of bikes in trees through the "Post" page. The website allows you to input the location and description of the picture. Also, the website will automatically store the date the picture was uploaded. The website then stores these as metadata in the picture for use in the "Home" page where users can see all the bikes that have been posted recently. All posts are anonymous to protect the privacy of posters, but the moderator can manually delete irrelevant/inaproriate posts from the Firebase storage.
@@ -25,5 +25,4 @@ Auto-moderation: One of our goals is to create a completely autonomous website t
 
 Mobile App: Hopefully, after the website version fully releases, I can also create an mobile app version for mobile users to more easily access.
 
-LaunchPad 2021: Hopefully, I am able to continue working on this project with a mentor in LaunchPad.
 There are still many improvements that I can make with this website and hopefully, it will be a project that Purdue students will use in the future.
