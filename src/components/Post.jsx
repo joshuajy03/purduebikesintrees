@@ -11,28 +11,46 @@ function Post() {
 
 
     const upload = () => {
-        if (image == null)
+        if (image == null) {
+            alert("upload failed");
             return;
+        }
+            
 
         let myCurrentDate = new Date();
         let day = myCurrentDate.getDate();
         let month = myCurrentDate.getMonth() + 1;
         let year = myCurrentDate.getFullYear();
 
-        const date = month + "/" + day + "/" + year;
+        let date = month + "/" + day + "/" + year;
+
+        var randomName = Math.floor(Math.random() * (999999999 - 100000000) + 100000000);
 
         var newMetadata = {
             customMetadata: {
                 'location': location,
                 'description': description,
-                'date': date
+                'dateObj': myCurrentDate,
+                'date': date,
+                
             }
         };
 
-        // Delete the metadata property
+        var extention = '';
+        if (image.name.includes('.png')){
+            extention = '.png';
+        } else if (image.name.includes('.jpg')) {
+            extention = '.jpg';
+        } else if (image.name.includes('.jpeg')) {
+            extention = '.jpeg';
+        } else {
+            alert("upload failed: not a png, jpg, or jpeg");
+            return;
+        }
 
+        let name = randomName + extention;
         const promises = [];
-        const uploadTask = storage.ref(`/images/${image.name}`).put(image);
+        const uploadTask = storage.ref(`/images/${name}`).put(image);
         promises.push(uploadTask);
         uploadTask.on('state_changed', snapshot => {
             const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
@@ -44,15 +62,15 @@ function Post() {
         });
 
         Promise.all(promises).then(tasks => {
-            alert("upload");
+            alert("upload success");
             var storageRef = storage.ref();
-            var imageRef = storageRef.child(`images/${image.name}`);
+            var imageRef = storageRef.child(`images/${name}`);
 
             imageRef.updateMetadata(newMetadata)
                 .then((metadata) => {
-                    // metadata.contentType should be null
+
                 }).catch((error) => {
-                    // Uh-oh, an error occurred!
+
                     alert(error)
                 });
         });
@@ -74,7 +92,7 @@ function Post() {
                             <input type="text" onChange={(e) => { setLocation(e.target.value) }} />
                         </h4>
                         <div className="content">
-                            <h4>Upload Your Image</h4>
+                            <h4>Upload Your Image (only png, jpeg, jpg)</h4>
                             <input type="file" onChange={(e) => { setImage(e.target.files[0]) }} />
                             <input type="submit" value="Submit" />
                             <img src={image} />

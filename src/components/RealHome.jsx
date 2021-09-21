@@ -11,8 +11,9 @@ function RealHome() {
     var listRef = storageRef.child('images');
 
 
-    const [images, setImages] = useState([])
+    const [images, setImages] = useState([]);
 
+    var list = [];
 
     function listItem() {
         storage.ref().child('images/').listAll()
@@ -20,15 +21,17 @@ function RealHome() {
                 res.items.forEach((item) => {
                     item.getDownloadURL().then((e) => {
                         item.getMetadata().then((f) => {
-                            setImages(arr => [...arr, {url: e,
+                            setImages(arr => [...arr, {
+                                url: e,
+                                des: f.customMetadata.description,
                                 date: f.customMetadata.date,
                                 loc: f.customMetadata.location,
-                                des: f.customMetadata.description
+                                dateObj: f.customMetadata.dateObj
                             }]);
                         })
-                        
+
                     })
-                    
+
 
                 })
             })
@@ -40,6 +43,10 @@ function RealHome() {
 
     useEffect(() => {
         listItem();
+        list.sort(function (a, b) {
+            return ((a.dateObj > b.dateObj) ? -1 : ((a.Obj == b.Obj) ? 0 : 1));
+        });
+        setImages(list);
     }, []);
 
     return (
@@ -48,11 +55,11 @@ function RealHome() {
                 images.map((val) => (
                     <div class="postcontainer pt-3 pb-3 my-3">
                         <div class="row align-items-center">
-                            {  
+                            {
                                 <h4>{val.des} [{val.loc}] [{val.date}]</h4>
                             }
                             <img alt={val.url} src={val.url} onload={console.log(val)} class="postimage" />
-                            
+
                         </div>
                     </div>
 
