@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from "react";
 import './WebPage.css';
-import whitebike from "../whitebike.jpg";
-import turquoisebike from "../turquoisebike.jpg";
-import lightbluebike from "../lightbluebike.jpg";
-import yellowbike from "../yellowbike.jpg";
 import storage from '../firebase/firebase';
 
 
@@ -14,11 +10,8 @@ function RealHome() {
     var storageRef = storage.ref();
     var listRef = storageRef.child('images');
 
-    const [data, setData] = useState([]);
-    const [url, setUrl] = useState([]);
-    const [des, setDes] = useState([]);
-    const [loc, setLoc] = useState([]);
-    const [date, setDate] = useState([]);
+
+    const [images, setImages] = useState([])
 
 
     function listItem() {
@@ -26,15 +19,16 @@ function RealHome() {
             .then(res => {
                 res.items.forEach((item) => {
                     item.getDownloadURL().then((e) => {
-                        setUrl(arr => [...arr, e]);
+                        item.getMetadata().then((f) => {
+                            setImages(arr => [...arr, {url: e,
+                                date: f.customMetadata.date,
+                                loc: f.customMetadata.location,
+                                des: f.customMetadata.description
+                            }]);
+                        })
                         
                     })
-                    item.getMetadata().then((f) => {
-                        setDes(arr => [...arr, f.customMetadata.description]);
-                        console.log(f);
-                        setLoc(arr => [...arr, f.customMetadata.location]);
-                        setDate(arr => [...arr, f.customMetadata.date]);
-                    })
+                    
 
                 })
             })
@@ -51,13 +45,13 @@ function RealHome() {
     return (
         <div className="home">
             {
-                url.map((val, index) => (
+                images.map((val) => (
                     <div class="postcontainer pt-3 pb-3 my-3">
                         <div class="row align-items-center">
                             {  
-                                <h4>{des[index]} [{loc[index]}] [{date[index]}]</h4>
+                                <h4>{val.des} [{val.loc}] [{val.date}]</h4>
                             }
-                            <img alt={val} src={val} onLoad={console.log(val)} class="postimage" />
+                            <img alt={val.url} src={val.url} onload={console.log(val)} class="postimage" />
                             
                         </div>
                     </div>
